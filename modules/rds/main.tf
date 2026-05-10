@@ -15,14 +15,14 @@ resource "aws_security_group" "db_sg" {
 }
 
 resource "aws_db_instance" "db" {
-  allocated_storage    = 20
-  engine               = "mysql"
-  instance_class       = "db.t3.micro"
-  username             = "admin"
-  password             = "Admin12345"
-  skip_final_snapshot  = true
+  allocated_storage   = 20
+  engine              = "mysql"
+  instance_class      = "db.t3.micro"
+  username            = "admin"
+  password            = "Admin12345"
+  skip_final_snapshot = true
 
   db_subnet_group_name   = aws_db_subnet_group.db_subnet.name
   vpc_security_group_ids = [aws_security_group.db_sg.id]
-  db_name = "userdb"
+  db_name                = "userdb"
 }

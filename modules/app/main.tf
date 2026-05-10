@@ -2,9 +2,9 @@ resource "aws_security_group" "app_sg" {
   vpc_id = var.vpc_id
 
   ingress {
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
+    from_port       = 80
+    to_port         = 80
+    protocol        = "tcp"
     security_groups = [var.web_sg_id]
   }
 
@@ -23,6 +23,6 @@ resource "aws_instance" "app" {
   vpc_security_group_ids = [aws_security_group.app_sg.id]
 
   user_data = templatefile("${path.module}/user_data.tpl", {
-  rds_endpoint = var.rds_endpoint
-})
+    rds_endpoint = var.rds_endpoint
+  })
 }

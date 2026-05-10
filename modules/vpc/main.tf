@@ -82,25 +82,25 @@ resource "aws_network_acl" "main_acl" {
 
   ingress {
 
-    protocol   = "tcp"
-    rule_no    = 100
-    action     = "allow"
+    protocol = "tcp"
+    rule_no  = 100
+    action   = "allow"
 
     cidr_block = "0.0.0.0/0"
 
-    from_port  = 0
-    to_port    = 65535
+    from_port = 0
+    to_port   = 65535
   }
 
   egress {
 
-    protocol   = "tcp"
-    rule_no    = 100
-    action     = "allow"
+    protocol = "tcp"
+    rule_no  = 100
+    action   = "allow"
 
     cidr_block = "0.0.0.0/0"
 
-    from_port  = 0
-    to_port    = 65535
+    from_port = 0
+    to_port   = 65535
   }
 }
